@@ -1,7 +1,7 @@
 export function UserNew() {
   return (
     <div>
-      <h1>New User / Create User</h1>
+      <h1>User Info</h1>
       <form>
         <div>
           First Name: <input name="first_name" type="text" />
