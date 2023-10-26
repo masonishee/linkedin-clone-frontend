@@ -7,6 +7,20 @@ import { ExperienceNew } from "./ExperienceNew";
 import { EducationIndex } from "./EducationIndex";
 
 export function Content() {
+  const user = [
+    {
+      first_name: "John",
+      last_name: "Doe",
+      email: "john.doe@example.com",
+      phone_number: "123-456-7890",
+      linkedin_url: "https://www.linkedin.com/in/johndoe",
+      personal_url: "https://www.johndoe.com",
+      resume_url: "https://www.johndoe.com/resume",
+      github_url: "https://github.com/johndoe",
+      twitter: "@johndoe",
+      photo: "https://www.example.com/johndoe.jpg",
+    },
+  ];
   const education = [
     {
       start_date: "2015-09-01",
@@ -39,9 +53,11 @@ export function Content() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<LogoutLink />} />
-        <Route path="/usersshow" element={<UsersShow />} />
         <Route path="/experiencenew" element={<ExperienceNew />} />
+        <Route path="/usersshow" element={<UsersShow />} />
+        <Route path="/educationindex" element={<EducationIndex />} />
       </Routes>
+      <UsersShow user={user} />
       <EducationIndex education={education} />
     </div>
   );
