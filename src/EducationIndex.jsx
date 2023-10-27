@@ -2,7 +2,7 @@ export function EducationIndex(props) {
   return (
     <div>
       <h1>Education</h1>
-      {props.education.map((education) => (
+      {props.educations.map((education) => (
         <div key={education.id}>
           <p>Start date: {education.start_date}</p>
           <p>End date: {education.end_date}</p>
