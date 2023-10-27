@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { ProfileIndex } from "./ProfileIndex";
 import { ExperienceNew } from "./ExperienceNew";
 import { EducationIndex } from "./EducationIndex";
+import { EducationNew } from "./EducationNew";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -19,6 +20,13 @@ export function Content() {
     });
   };
 
+  const handleCreateEducation = (params, successCallback) => {
+    console.log("handleCreateEducation", params);
+    axios.post("http://localhost:3000/educations.json", params).then((response) => {
+      setEducations([...educations, response.data]);
+      successCallback();
+    });
+  };
   useEffect(handleIndexProfiles, []);
   return (
     <div>
@@ -29,6 +37,7 @@ export function Content() {
         <Route path="/experiencenew" element={<ExperienceNew />} />
         <Route path="/profileindex" element={<ProfileIndex profiles={profiles} />} />
         <Route path="/educationindex" element={<EducationIndex />} />
+        <Route path="/educationnew" element={<EducationNew onCreateEducation={handleCreateEducation} />} />
       </Routes>
     </div>
   );
