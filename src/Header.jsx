@@ -9,7 +9,8 @@ export function Header() {
         <Link to="/logout">Logout</Link>
         <Link to="/profileindex">Profiles</Link>
         <Link to="/experiencenew">Experience</Link>
-        <Link to="/educationnew">Education</Link>
+        <Link to="/educationnew">Add Education</Link>
+        <Link to="/educationindex">Education</Link>
       </nav>
     </header>
   );
